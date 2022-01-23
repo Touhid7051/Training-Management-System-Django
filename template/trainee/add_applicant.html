@@ -1,0 +1,65 @@
+{% extends 'trainee/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+    .nice-select span {
+    color: #000000 !important;
+}
+</style>
+
+{% block content %}
+
+
+<section class="about-section pt-120 pb-120 bg_img" data-background="assets/images/map.png">
+ 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                
+                <form action="#" id="applicantForm"  method="post" class="" enctype='multipart/form-data' data-cities-url="{% url 'ajax_load_Sub_district' %}" novalidate>
+
+                        
+                    {% csrf_token %}
+                    {{ form | crispy }}
+
+
+
+                    <div class="form-actions form-group">
+                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+      $(function(){
+         $("html").on('change','#id_district',function () {
+      var url = $("#applicantForm").attr("data-cities-url");  // get the url of the `load_cities` view
+      var districtId = $(this).val();  // get the selected country ID from the HTML input
+      console.log(url)
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'district': districtId       // add the country id to the GET parameters
+        },
+        
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_sub_district").html(data);  // replace the contents of the city input with the data that came from the server
+          $('#id_sub_district').niceSelect('update');
+        }
+      });
+
+    }); 
+      })
+    
+  </script>
+
+
+
+{% endblock %}

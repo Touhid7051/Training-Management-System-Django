@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content">
+    <div class="animated fadeIn">
+
+
+
+
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Session</strong>
+                </div>
+                <div class="col-lg-6"></div>
+                <div class="col-lg-3"><a href="{% url 'AddSession' %}"><button type="button" class="btn btn-primary">Add Session</button></a></div>
+                
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Course Name</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in Session %}
+                            <tr>
+                                
+                                <th scope="row">1</th>
+                                <td>{{ c.course }}</td>
+                                <td>{{ c.session_year }}</td>
+                                <td> <a href="{% url 'EditSession' c.id %}" > <button type="button" class="btn btn-secondary">Edit</button> </a> </td>
+                                <td>  <a href="{% url 'DeleteSession' c.id %}" onclick="return confirm('Are you sure')" > <button type="button" class="btn btn-danger">Delete</button> </a></td>
+                            </tr>
+                            {% endfor %}
+         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+{% endblock %}

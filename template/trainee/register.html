@@ -1,0 +1,114 @@
+{% extends 'trainee/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<style>
+    .nice-select span {
+    color: #000000 !important;
+}
+</style>
+
+{% block content %}
+
+
+ <!-- preloader -->
+ <!-- <div class="preloader" id="preloader">
+    <div class="preloader-thumb">
+        <img src="assets/images/propeller.png" alt="image">
+    </div>
+</div> -->
+
+<!-- header-section start -->
+
+<!-- header-section end -->
+
+
+<!-- banner-section start -->
+
+<!-- banner-section end -->
+
+
+
+
+ <!-- breadcrumb-section start -->
+ <!-- <div class="breadcrumb-section">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">My Account</li>
+            </ol>
+        </nav>
+    </div>
+</div> -->
+<!-- breadcrumb-section end -->
+
+
+<!-- register-section start -->
+<section class="register-section pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="register-form-area account-area">
+                    <a href="#0" class="cmn-btn-active account-control-button">Login</a>
+                    <a href="#0" class="cmn-btn account-control-button ml-3">Registration</a>
+                    <h3 class="title">well come to Flio</h3>
+                    <p>Maecenas mollis dictum aliquam Velit sapien  </p>
+
+                    <!-- <ul class="sign-up-option justify-content-center">
+                        <li>
+                            <a href="#0" class="google"><i class="fab fa-google"></i> google</a>
+                        </li>
+                        <li>
+                            <a href="#0" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#0" class="twitter"><i class="fab fa-twitter"></i>Twitter</a>
+                        </li>
+                    </ul> -->
+                </div>
+                <br class="login-form-area account-area change-form">
+                    <!-- <a href="#0" class="cmn-btn account-control-button">Login</a> -->
+                    <h3 class="title">নিবন্ধন</h3>
+                    <p>নিবন্ধন করার পরে ইউজার নেম টি ভবিষ্যতের জন্য সংরক্ষন করতে হবে</p>
+                    </br>
+                  
+                    <form class="create-account-form" method="post">
+                        {% csrf_token %}
+                        <p style="text-align: left;">ইউজার নেম(ইংরেজি)*</p>
+                        <div class="form-group">
+                            {{form.username}}
+                        </div>
+                        <p style="text-align: left;">ইমেইল ঠিকানা(ইংরেজি)*</p>
+                        <div class="form-group">
+                            {{form.email}}
+                        </div>
+                        <p style="text-align: left;">পাসয়ার্ড(ইংরেজি)*</p>
+                        <div class="form-group">
+                            {{form.password1}}
+                            <a href="#0" id="show-pass-one" class="show-pass"><i class="fas fa-eye"></i></a>
+                        </div>
+                        <p style="text-align: left;">পূনরায় পাসওয়ার্ড(ইংরেজি)*</p>
+                        <div class="form-group">
+                            {{form.password2}}
+                            <a href="#0" id="show-pass-two" class="show-pass"><i class="fas fa-eye"></i></a>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" value="সমর্পণ">
+                        </div>
+                    </form>
+                    
+                    <div class="terms-area">
+                        <p class="terms-and-conditions"><a href="#0">Tream & Condition & Privacy?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- register-section end -->
+
+
+
+{% endblock %}

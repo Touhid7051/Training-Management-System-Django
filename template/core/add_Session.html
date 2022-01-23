@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content">
+    <div class="animated fadeIn">
+
+
+
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">SESSION</div>
+                <div class="card-body card-block">
+                    <form action="#" method="post" class="foundation">
+
+                        
+                        {% csrf_token %}
+                        {{ form | crispy }}
+
+
+
+                        <div class="form-actions form-group">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+{% endblock %}
