@@ -1,0 +1,160 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content">
+    <div class="animated fadeIn">
+
+
+
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong class="card-title">Courses</strong>
+                </div>
+                
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Field</th>
+                                <th scope="col">#</th>
+                       
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                               
+                                <td><img src="{{ applicant.picture.url }}" ></td>
+                            </tr>
+                           
+                            
+                            <tr>
+                                
+                                <th scope="row">কোর্স</th>
+                                <td>{{ applicant.course }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">সেশন</th>
+                                <td>{{ applicant.session }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">ক্রমিক নং</th>
+                                <td>{{ applicant.roll_no }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">নাম (বাংলা)</th>
+                                <td>{{ applicant.name_ban }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">নাম (English)</th>
+                                <td>{{ applicant.name_eng }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">পিতার নাম (বাংলা)</th>
+                                <td>{{ applicant.fathers_name_bangla }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">পিতার নাম (English)</th>
+                                <td>{{ applicant.fathers_name }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">মাতার নাম (বাংলা)</th>
+                                <td>{{ applicant.mothers_name_bangla }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">মাতার নাম (English)</th>
+                                <td>{{ applicant.mothers_name }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">বৈবাহিক অবস্থা</th>
+                                <td>{{ applicant.marital_status }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">বর্তমান ঠিকানা</th>
+                                <td>{{ applicant.present_address }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">গ্র্রাম</th>
+                                <td>{{ applicant.village }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">জেলা</th>
+                                <td>{{ applicant.district }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">উপজেলা</th>
+                                <td>{{ applicant.sub_district }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">থানা</th>
+                                <td>{{ applicant.ps }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">ডাকঘর</th>
+                                <td>{{ applicant.post_office }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">জন্মতারিখ</th>
+                                <td>{{ applicant.date_of_birth }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">ধর্ম</th>
+                                <td>{{ applicant.religion }}</td>
+                            </tr>
+                            
+                            <tr>
+                                
+                                <th scope="row">জন্মনিবন্ধন/জাতীয় পরিচয়পত্র নং</th>
+                                <td>{{ applicant.nid_BC }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">শিক্ষাগত যোগ্যতা</th>
+                                <td>{{ applicant.education }}</td>
+                            </tr>
+                            <tr>
+                                
+                                <th scope="row">মোবাইল</th>
+                                <td>{{ applicant.phone }}</td>
+                            </tr>
+                           
+                                
+                               
+                         
+         
+                        </tbody>
+                    </table>
+                    <div class="col-lg-6"></div>
+                <div class="col-lg-3"><a href="{% url 'Remark_Applicant' applicant.id  %}"><button type="button" class="btn btn-primary">Remark Applicant</button></a></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div><!-- .animated -->
+</div><!-- .content -->
+
+{% endblock %}

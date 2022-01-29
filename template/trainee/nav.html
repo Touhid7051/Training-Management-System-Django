@@ -1,0 +1,135 @@
+{% load static %}
+<style>
+    .line {
+  border: 2px solid black;
+  padding: 5px;
+  height: 39px;
+  width: 150px;
+  text-align: center;
+}
+
+.navbar-collapse .main-menu li a {
+  padding: 30px 3px !important;}
+
+@media (max-width: 991px){
+.navbar-collapse .main-menu li a {
+  padding: 4px 15px !important;
+  display: block;
+}}
+</style>
+    <!-- preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-thumb">
+          <img src="{% static 'trainee/assets/images/propeller.png' %}" alt="image">
+      </div>
+  </div>
+
+  <!-- header-section start -->
+  <header class="header-section">
+      <div class="header-top d-none d-xl-block">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-10">
+                      <div class="header-wrapper">
+                          <div class="header-info">
+                              <div class="info-item">
+                                 
+                                 
+                              </div>
+                              <div class="info-item" >
+                                  
+                                  <div class="info-content" style="text-align:center">
+                                      <h3 class="title" style="text-align:center">বিধবা ,স্বামী পরিত্যাক্তা ও হতদরিদ্র জনগোষ্ঠীকে কর্মসংস্থানমূলক কাজের প্রশিক্ষণের মাধ্যমে আর্থসামাজিক অবস্থার উন্নয়ন প্রকল্প </h3>
+                                     
+                                  </div>
+                              </div>
+                              <div class="info-item">
+                                  
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                <!--  <div class="col-lg-2">
+                      <div class="language-select-list d-flex flex-wrap">
+                          <div class="language-thumb">
+                             
+                          </div>
+                           <div class="language-select">
+                              <select class="select-bar">
+                                  <option data-display="English">English</option>
+                                  <option value="1">Bangla</option>
+                                  <option value="2">Hindi</option>
+                              </select>
+                          </div> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="header-bottom">
+          <div class="container">
+              <div class="row align-items-center justify-content-between">
+                  <!-- <a class="site-logo site-title" href="/"><img src="{% static 'trainee/assets/images/logo.png' %}" alt="site-logo"></a> -->
+                  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="fas fa-bars"></span>
+                  </button>
+                  <nav class="navbar navbar-expand-lg p-0">
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav main-menu ml-auto">
+                              <li class="menu_has_children"><a href="/">
+                                  <div class="line"> হোম </div></a>
+                                  <!-- <ul class="sub-menu">
+                                      <li><a href="index.html">Home One</a></li>
+                                      <li><a href="index-2.html">Home Two</a></li>
+                                  </ul> -->
+                              </li>
+                              <li><a href="about.html"> <div class="line">  আমাদের সম্পর্কে   </div></a></li>
+                        
+                                  <!-- <ul class="sub-menu">
+                                      <li><a href="crew-course.html">Crew Course</a></li>
+                                      <li><a href="traffic-control.html">Traffic Control Course</a></li>
+                                      <li><a href="Private-pilot.html">Private Pilot Course</a></li>
+                                      <li><a href="atp-training.html">ATP Training Course</a></li>
+                                  </ul> -->
+                              </li>
+                              <!-- <li class="menu_has_children"><a href="#0">Pages<i class="fas fa-caret-down"></i></a>
+                                  <ul class="sub-menu">
+                                      <li><a href="privacy.html">Privacy Page</a></li>
+                                      <li><a href="service.html">Service</a></li>
+                                      <li><a href="gallery.html">Gallery Page</a></li>
+                                      <li><a href="job-list.html">Job List</a></li>
+                                      <li><a href="job-details.html">Job Details</a></li>
+                                      <li><a href="trainer.html">Trainer</a></li>
+                                      <li><a href="trainer-profile.html">Trainer Profile</a></li>
+                                      <li><a href="student-registration.html">Student Registration</a></li>
+                                      <li><a href="faq.html">Faq Page</a></li>
+                                      <li><a href="register.html">Register Page</a></li>
+                                      <li><a href="login.html">Login Page</a></li>
+                                      <li><a href="404.html">404 Page</a></li>
+                                  </ul>
+                              </li> -->
+                              <!-- <li class="menu_has_children"><a href="#0">Blog<i class="fas fa-caret-down"></i></a>
+                                  <ul class="sub-menu">
+                                      <li><a href="blog-1.html">Blog Post One</a></li>
+                                      <li><a href="blog-2.html">Blog Post Two</a></li>
+                                      <li><a href="blog-3.html">Blog Post Three</a></li>
+                                      <li><a href="blog-details.html">Blog Details</a></li>
+                                  </ul>
+                              </li> -->
+                              <li><a href="#"><div class="line">যোগাযোগ  </div></a></li>
+                              <li><a href="{% url 'login' %}"><div class="line">লগইন  </div></a></li>
+                              <li><a href="{% url 'register' %}"><div class="line"> নিবন্ধন  </div></a></li>
+                              <li><a href="{% url 'login' %}"><div class="line">অফিস লগইন  </div></a></li>
+                              <li><a href="{% url 'logout' %}"><div class="line"> লগআউট  </div></a></li>
+                          </ul>
+                          <div class="header-action d-flex flex-wrap align-items-center">
+                              <a href="{% url 'AddApplicant' %}" class="cmn-btn">আবেদন করুন</a>
+                          </div>                    
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- header-section end -->
