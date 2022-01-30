@@ -14,27 +14,29 @@
                 <div class="card-header">
                     <strong class="card-title">Applicants</strong>
                 </div>
+               
                 <div class="card-body">
                     
 
 <!-- table -->
 <div class="col-lg-6"></div>
 <div class="col-lg-3"><a href="{% url 'AddApplicant' %}"><button type="button" class="btn btn-primary">Add Applicant</button></a></div>
-
+<br>
 <table id="example" class="display nowrap" style="width:100%">
     <thead>
         <tr>
-          
-            <th>name_eng </th>
-            <th>name_ban</th>
+            <th>Image </th>
+            <th>Name(English)</th>
+            <th>name(Bangla)</th>
             <th>course</th>
             <th>session</th>
-            <th>fathers_name</th>
-            <th>marital_status</th>
-            <th>district</th>
-            <th>sub_district</th>
-            <th>education</th>
-            <th>date_of_birth</th>
+            <th>Father's Name</th>
+            <th>Mother's Name</th>
+            <th>Date Of Birth</th>
+            <th>Education</th>
+            <th>Village</th>
+            <th>District</th>
+            <th>Sub-district</th>
             <th>Detail</th>
           
         </tr>
@@ -42,35 +44,25 @@
     <tbody>
         {% for a in Applicant %}
         <tr>
+            <td>  <img src="{{ a.picture.url }}"> </td>
             <td>{{ a.name_eng }}</td>
             <td>{{ a.name_ban}}</td>
             <td>{{ a.course}}</td>
             <td>{{ a.session}}</td>
             <td>{{ a.fathers_name}}</td>
-            <td>{{ a.marital_status}}</td>
+            <td>{{ a.mothers_name}}</td>
+            <td>{{ a.date_of_birth  }}</td>
+            <td>{{ a.education }}</td>
+            <td>{{ a.village }}</td>
             <td>{{ a.district }}</td>
             <td>{{ a.sub_district }}</td>
-            <td>{{ a.education }}</td>
-            <td>{{ a.date_of_birth }}</td>
+            
+           
             <td><a href="{% url 'Applicant_Detailed' a.id %}"><button type="button" class="btn btn-primary">Detail</button></a></td>
         </tr>
        {% endfor %}
     </tbody>
-    <tfoot>
-        <tr>
-            <th>name_eng </th>
-            <th>name_ban</th>
-            <th>course</th>
-            <th>session</th>
-            <th>fathers_name</th>
-            <th>marital_status</th>
-            <th>district</th>
-            <th>sub_district</th>
-            
-            <th>education</th>
-            <th>date_of_birth</th>
-        </tr>
-    </tfoot>
+    
 </table>
 
 <!-- table -->

@@ -18,7 +18,7 @@ class Add_Applicant(ModelForm):
         "post_office", "date_of_birth",
         "religion", "nid_BC",
         "education", "phone", 
-        "picture", "status"]
+        "picture"]
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['sub_district'].queryset = Sub_district.objects.none()

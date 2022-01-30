@@ -8,15 +8,7 @@
 
 
 <style>
-    .banner-section {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        position: relative;
-        background-image: url("../images/b.jpg");
-        z-index: 2;
-        background-size: cover;
-        background-position: center;
-    }
+ /*   
     
     .banner-section::after {
         position: absolute;
@@ -29,6 +21,27 @@
         background-image: url("../../assets/trainee/assets/images/b.jpg");
         background-color: rgb(18, 158, 0);
         opacity: 0.8;
+    } */
+    .banner-section::after {
+        position: absolute;
+       
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: #0000;
+        opacity: 0.8;
+    }
+    .banner-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        position: relative;
+        
+        z-index: 2;
+        background-size: cover;
+        background-position: center;
     }
     
 </style>

@@ -29,13 +29,10 @@
       <div class="header-top d-none d-xl-block">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-10">
+                  <div class="col-lg-12">
                       <div class="header-wrapper">
                           <div class="header-info">
-                              <div class="info-item">
-                                 
-                                 
-                              </div>
+                              
                               <div class="info-item" >
                                   
                                   <div class="info-content" style="text-align:center">
@@ -43,10 +40,7 @@
                                      
                                   </div>
                               </div>
-                              <div class="info-item">
-                                  
-                                 
-                              </div>
+                             
                           </div>
                       </div>
                   </div>
@@ -119,12 +113,16 @@
                               </li> -->
                               <li><a href="#"><div class="line">যোগাযোগ  </div></a></li>
                               <li><a href="{% url 'login' %}"><div class="line">লগইন  </div></a></li>
+                              
+                              {% if user.is_authenticated %}
                               <li><a href="{% url 'register' %}"><div class="line"> নিবন্ধন  </div></a></li>
-                              <li><a href="{% url 'login' %}"><div class="line">অফিস লগইন  </div></a></li>
                               <li><a href="{% url 'logout' %}"><div class="line"> লগআউট  </div></a></li>
+                              {% endif %}
+                              <li><a href="{% url 'login' %}"><div class="line">অফিস লগইন  </div></a></li>
+                              
                           </ul>
                           <div class="header-action d-flex flex-wrap align-items-center">
-                              <a href="{% url 'AddApplicant' %}" class="cmn-btn">আবেদন করুন</a>
+                              <a href="{% url 'AddApplicant' %}" class="cmn-btn">আবেদন </a>
                           </div>                    
                       </div>
                   </nav>
