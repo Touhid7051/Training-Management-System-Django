@@ -29,14 +29,18 @@ urlpatterns = [
     path('EditCourse/<int:pk>', EditCourse.as_view(), name="EditCourse"),
     path('DeleteCourse/<int:pk>', DeleteCourse.as_view(), name="DeleteCourse"),
 
-    # session
+    # session 
     path('AddSession/', AddSession.as_view(), name="AddSession"),
     path('ManageSession/', ManageSession.as_view(), name="ManageSession"),
     path('EditSession/<int:pk>', EditSession.as_view(), name="EditSession"),
     path('DeleteSession/<int:pk>', DeleteSession.as_view(), name="DeleteSession"),
-    # 
+    # session_short_list session_waiting_list
     path('sessions/', views.sessions, name='sessions'),
     path('<int:session_id>/', views.session, name='session'),
+    path('session_short_list/<int:session_id>/', views.session_short_list, name='session_short_list'),
+    path('session_waiting_list/<int:session_id>/', views.session_waiting_list, name='session_waiting_list'),
+    path('done/<int:session_id>/', views.done, name='done'),
+
 
 
     # applicants

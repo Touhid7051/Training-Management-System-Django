@@ -9,7 +9,7 @@
 
 
 
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Course Session</strong>
@@ -25,6 +25,9 @@
           
             <th>Course</th>
             <th>Session</th>
+            <th>Short List</th>
+            <th>Waiting List</th>
+            <th>Final List</th>
     
           
         </tr>
@@ -34,17 +37,14 @@
         <tr>
             <td>{{ s.course }}</td>
             <td>    <a href="{% url 'session' s.id %}">  {{ s.session_year}}</a></td>
+            <td>    <a href="{% url 'session_short_list' s.id %}">Short List View </a></td>
+            <td>    <a href="{% url 'session_waiting_list' s.id %}">Waiting List View </a></td>
+            <td>    <a href="{% url 'done' s.id %}"> List View </a></td>
 
         </tr>
        {% endfor %}
     </tbody>
-    <tfoot>
-        <tr>
-            <th>Course</th>
-            <th>Session</th>
-
-        </tr>
-    </tfoot>
+    
 </table>
 
 <!-- table -->

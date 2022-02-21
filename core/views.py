@@ -198,7 +198,22 @@ def session(request, session_id):
 
     return render(request, 'core/session.html', {'session': session})
 
+def session_short_list(request, session_id):
+    #session = get_object_or_404(Session, pk=session_id,session.applicants.status )
+    applicant = Applicant.objects.filter(session = session_id, status="Accepted")
 
+    return render(request, 'core/session_short_list.html', {'applicant': applicant})
+
+def session_waiting_list(request, session_id):
+    #session = get_object_or_404(Session, pk=session_id,session.applicants.status )
+    applicant = Applicant.objects.filter(status="Waiting")
+
+    return render(request, 'core/session_short_list.html', {'applicant': applicant})
+def done(request, session_id):
+    #session = get_object_or_404(Session, pk=session_id,session.applicants.status )
+    applicant = Applicant.objects.filter(status="Successfully Done")
+
+    return render(request, 'core/session_short_list.html', {'applicant': applicant})
 
 # reg
 

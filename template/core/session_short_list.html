@@ -42,7 +42,7 @@
         </tr>
     </thead>
     <tbody>
-        {% for a in session.applicants.all %}
+        {% for a in applicant %}
         <tr>
             <td>  <img src="{{ a.picture.url }}"> </td>
             <td>{{ a.name_eng }}</td>

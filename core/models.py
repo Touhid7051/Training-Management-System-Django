@@ -17,7 +17,10 @@ Marital_CHOICES = (
 
 Status_CHOICES = (
     ('Accepted', 'Accepted'),
-    ('Rejected', 'Rejected')
+    ('Rejected', 'Rejected'),
+    ('Waiting', 'Waiting'),
+    ('Successfully Done', 'Successfully Done')
+
 )
 
 
