@@ -44,24 +44,65 @@
         background-position: center;
     }
     
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      .img-slider {
+          position: relative;
+          width: 100vw;
+          height: 650px;
+      }
+      .img-slider .slider-container {
+          position: absolute;
+          width: 300%;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          animation: slider 20s infinite;
+      }
+      .img-slider .slider-container .slide {
+          position: relative;
+          width: 33.33333333%;
+          height: 100%;
+          float: left;
+          overflow: hidden
+      }
+      .img-slider .slider-container .slide img {
+        display: block;
+        width: 100%;
+        height: 100%
+      }
+      @keyframes slider {
+          0%, 25%, 100%{left: 0}
+          
+          30%, 55%{left: -100%}
+          
+          60%, 85%{left: -200%}
+      }
+      
+    
 </style>
     <!-- banner-section start -->
-    <section class="banner-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 text-center">
-                    <div class="banner-content">
-                        <h6 class="title">ড্রাইভিং কাম অটো মেকানিক্স ও কম্পিউটার অফিস এপ্লিকেশন</h6>
-                        <p>ট্রেইনিং প্রোগ্রামে আবেদন চলছে</p>
-                        <div class="btn-area">
-                            <a href="{% url 'register' %}" class="cmn-btn">নিবন্ধন করুন</a>
-                            <a href="{% url 'AddApplicant' %}" class="cmn-btn-active">আবেদন করুন</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <Section class="img-slider">
+        <div class="slider-container">
+          
+          <div class="slide">
+            <img src="{% static 'trainee/assets/images/b.jpg' %}" style="width:100vw;height:650px;">
+          </div>
+          
+          <div class="slide">
+            <img src="{% static 'trainee/assets/images/drive.jpg' %}" style="width:100vw;height:650px;">
+          </div>
+      
+          <div class="slide">
+            <img src="{% static 'trainee/assets/images/c2.jpg' %}" style="width:100vw;height:650px;">
+          </div>
+          
         </div>
-    </section>
+      </Section>
     <!-- banner-section end -->
 
 
