@@ -27,7 +27,8 @@ def class_view_decorator(function_decorator):
 
 # Create your views here.
 def index(request):
-    return render(request, 'trainee/index.html')
+    note = Resolution.objects.all
+    return render(request, 'trainee/index.html', {'note':note})
 
 
 @class_view_decorator(login_required)

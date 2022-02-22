@@ -102,6 +102,7 @@ class Resolution(models.Model):
     title = models.CharField(max_length=50, verbose_name="শীরনাম")
     short_description = models.TextField(max_length=500, verbose_name= "বর্ণনা" )
     detail = models.TextField(max_length=1000, verbose_name= "বিস্তারিত বর্ণনা" )
+    file_1 = models.FileField()
 
     def __str__(self):
         return self.title

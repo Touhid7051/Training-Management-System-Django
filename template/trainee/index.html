@@ -154,8 +154,14 @@
                           <h6 class="title">বাস্তবায়নকারী সংস্থাঃ </h6> 
                           <h6 class="title">সমাজসেবা অধিদপ্তর ও বহুমূখী মানব কল্যাণ সংস্থা </h6> 
                           <p>...........................................................</p>
+                          {% for n in note %}
+                          <p>{{ n.title}}</p>
+                          <p>{{ n.short_description}}</p>
+                          <p>{{ n.detail}}</p>
+                          <a href="{{ n.file_1.url}}"><p>download</p></a>
                           
-                          
+                         
+                          {% endfor %}
                         
                         <a href="{% url 'AddApplicant' %}" class="cmn-btn">আবেদন করুন</a>
                     </div>
