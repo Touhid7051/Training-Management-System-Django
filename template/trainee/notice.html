@@ -133,32 +133,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <br class="about-left-content">
-                        <h6 class="title">সমাজসেবা অধিদপ্তর ও বহুমূখী মানব কল্যাণ সংস্থার অধিনে বিধবা ,স্বামী পরিত্যাক্তা ও হতদরিদ্র জনগোষ্ঠীকে কর্মসংস্থানমূলক কাজের প্রশিক্ষণের মাধ্যমে আর্থসামাজিক অবস্থার উন্নয়ন প্রকল্প </h6>
-                        <p>বর্তমানে ২ ধরনের ট্রেইনিং কর্মসূচির জন্য আবেদন আহবান করা হচ্ছে।</p> </br>
-                        <p>যাদের জন্য ট্রেনিংঃ</p>
-                        <ul class="about-item">
-                            <li>বিধবা</li>
-                            <li>স্বামী পরিত্যাক্তা</li>
-                            <li>হতদরিদ্র</li>
-                        </ul>   </br>
+                    {% for n in note %}
+                    <div class="about-left-content">
+                        <h6 class="title">{{ n.title}}</h6>
+                   
                         
-                        <p>ট্রেইনিং সমূহঃ</p>
+                       
                         
-                                <ul class="about-item">
-                                    <li>ড্রাইভিং কাম অটো মেকানিক্স</li>
-                                    <li>কম্পিউটার অফিস এপ্লিকেশন</li>
-                                </ul>   
-                          </br>
-                          
-                          <h6 class="title">বাস্তবায়নকারী সংস্থাঃ </h6> 
-                          <h6 class="title">সমাজসেবা অধিদপ্তর ও বহুমূখী মানব কল্যাণ সংস্থা </h6> 
-                          <p>...........................................................</p>
+               
                         
-                          
                      
-                        <a href="{% url 'AddApplicant' %}" class="cmn-btn">আবেদন করুন</a>
+                          <p>{{ n.short_description}}</p>
+                          <p>{{ n.detail}}</p>
+                          <a class="cmn-btn" href="{{ n.file_1.url}}">Download</a>
+                          
+                         
+                         
+                        
+                     
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -24,20 +24,23 @@
         <tr>
           
             <th>Image </th>
-            <th>Name(English)</th>
+        
             <th>name(Bangla)</th>
-            <th>course</th>
             <th>session</th>
-            <th>Father's Name</th>
-            <th>Mother's Name</th>
-            <th>Date Of Birth</th>
-            <th>Education</th>
-            <th>Village</th>
+            <th>course</th>
+
+       
+           
             <th>District</th>
             <th>Sub-district</th>
+            <th>Phone</th>
             
             <th>Status</th>
             <th>Detail</th>
+            <th>Detail</th>
+            <th>Delete</th>
+
+
           
         </tr>
     </thead>
@@ -45,19 +48,19 @@
         {% for a in session.applicants.all %}
         <tr>
             <td>  <img src="{{ a.picture.url }}"> </td>
-            <td>{{ a.name_eng }}</td>
+
             <td>{{ a.name_ban}}</td>
-            <td>{{ a.course}}</td>
             <td>{{ a.session}}</td>
-            <td>{{ a.fathers_name}}</td>
-            <td>{{ a.mothers_name}}</td>
-            <td>{{ a.date_of_birth  }}</td>
-            <td>{{ a.education }}</td>
-            <td>{{ a.village }}</td>
+            <td>{{ a.course}}</td>
+           
             <td>{{ a.district }}</td>
             <td>{{ a.sub_district }}</td>
+            <td>{{ a.phone }}</td>
+
             <td>{{ a.status }}</td>
-            <th><a href="{% url 'Applicant_Detailed' a.id %}"><button type="button" class="btn btn-primary">Detail</button></a></th>
+            <td><a href="{% url 'Applicant_Detailed' a.id %}"><button type="button" class="btn btn-primary">Detail</button></a></td>
+            <td>  <a href="{% url 'DeleteCourse' a.id %}" onclick="return confirm('Are you sure')" > <button type="button" class="btn btn-danger">Delete</button> </a></td>
+
         </tr>
        {% endfor %}
     </tbody>

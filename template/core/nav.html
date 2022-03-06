@@ -1,5 +1,9 @@
 {% load static %}
-    
+<style>
+    .right-panel .navbar-brand img {
+    max-width: 34px;
+}
+</style>
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -10,13 +14,14 @@
                     </li>
                      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Option</a>
-                        <ul class="sub-menu children dropdown-menu">                           
+                        <ul class="sub-menu children dropdown-menu">  
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{% url 'ManageProject' %}">Project</a></li>
                             <li><i class="fa fa-puzzle-piece"></i><a href="{% url 'ManageCourse' %}">Courses</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="{% url 'ManageSession' %}">Manage Sessions</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="{% url 'sessions' %}">Sessions wise List</a></li>
                             <li><i class="fa fa-bars"></i><a href="{% url 'ManageApplicant' %}">Applicants</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Financial Aid</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{% url 'ManageResolution' %}">Manage Resolution</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{% url 'ManageResolution' %}">Manage Notice</a></li>
                      
                         
                         </ul>
@@ -33,7 +38,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img src="{% static 'trainee/assets/images/logo3.jpg' %}" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>

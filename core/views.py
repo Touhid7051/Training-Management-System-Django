@@ -30,6 +30,10 @@ def index(request):
     note = Resolution.objects.all
     return render(request, 'trainee/index.html', {'note':note})
 
+def Notice(request):
+    note = Resolution.objects.all
+    return render(request, 'trainee/notice.html', {'note':note})
+
 
 @class_view_decorator(login_required)
 class AddApplicant(CreateView):
@@ -39,7 +43,11 @@ class AddApplicant(CreateView):
 
     template_name = 'trainee/add_applicant.html'
     success_url = '/success/'
-
+class DeleteApplicant(DeleteView):
+    model = Applicant
+    pk_url_kwarg = 'pk'
+    template_name = 'blog/delete_view.html'
+    success_url = '/blog/manage_post_list'
 # def AddApplicant(request):
 #     if request.user.is_authenticated:
 #         user = request.user
@@ -87,9 +95,44 @@ class EditCourse(UpdateView):
     template_name = 'core/add_course.html'
     success_url = '/'
 
-
 class DeleteCourse(DeleteView):
     model = Course
+    pk_url_kwarg = 'pk'
+    template_name = 'blog/delete_view.html'
+    success_url = '/blog/manage_post_list'
+
+    def get(self, *args, **kwargs):
+        return self.post(*args, **kwargs)
+#Project
+class ManageProject(ListView):
+    model = Project
+    template_name = 'core/manage_project.html'
+    context_object_name = 'manage_course_list'
+
+class DetailedProject(DetailView):
+    model = Project
+    template_name = 'core/detail_view.html'
+    context_object_name = 'course'
+    
+class AddProject(CreateView):
+    model = Project
+    form_class = Add_Project
+    template_name = 'core/add_project.html'
+    success_url = '/ManageProject'
+
+
+class EditProject(UpdateView):
+    model = Project
+    form_class = Add_Course
+    pk_url_kwarg = 'pk'
+    template_name = 'core/add_project.html'
+    success_url = '/'
+
+
+
+
+class DeleteProject(DeleteView):
+    model = Project
     pk_url_kwarg = 'pk'
     template_name = 'blog/delete_view.html'
     success_url = '/blog/manage_post_list'

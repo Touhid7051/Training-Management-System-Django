@@ -144,12 +144,17 @@
                                   </ul>
                               </li> -->
                               <li><a href="#"><div class="line">যোগাযোগ  </div></a></li>
-                              <li><a href="{% url 'login' %}"><div class="line">লগইন  </div></a></li>
+                              <li><a href="{% url 'Notice' %}"><div class="line">  নোটিশ </div></a></li>
                               
                               {% if user.is_authenticated %}
                               <li><a href="{% url 'register' %}"><div class="line"> নিবন্ধন  </div></a></li>
+                             
+
                               <li><a href="{% url 'logout' %}"><div class="line"> লগআউট  </div></a></li>
+                              {% else %}
+                              <li><a href="{% url 'login' %}"><div class="line">লগইন  </div></a></li>
                               {% endif %}
+                             
                               <!--<li><a href="{% url 'login' %}"><div class="line">অফিস লগইন  </div></a></li> -->
                               
                           </ul>

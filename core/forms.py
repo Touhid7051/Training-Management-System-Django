@@ -17,7 +17,7 @@ class Add_Applicant(ModelForm):
         "sub_district", "ps",
         "post_office", "date_of_birth",
         "religion", "nid_BC",
-        "education", "phone", 
+        "education", "phone", "Guardian_phone",
         "picture"]
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -44,7 +44,10 @@ class Add_Course(ModelForm):
     class Meta:
         model = Course
         fields = '__all__'
-
+class Add_Project(ModelForm):
+    class Meta:
+        model = Project
+        fields = '__all__'
 
 class Add_Session(ModelForm):
     class Meta:

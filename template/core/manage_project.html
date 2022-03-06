@@ -9,34 +9,33 @@
 
 
 
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Notice</strong>
+                    <strong class="card-title">Courses</strong>
                 </div>
                 <div class="col-lg-6"></div>
-                <div class="col-lg-3"><a href="{% url 'AddResolution' %}"><button type="button" class="btn btn-primary">Add Resolution</button></a></div>
+                <div class="col-lg-3"><a href="{% url 'AddProject' %}"><button type="button" class="btn btn-primary">Add Project</button></a></div>
                 
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                
                                 <th scope="col">Title</th>
                                 <th scope="col">Edit</th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for c in Resolution %}
+                            {% for c in manage_course_list %}
                             <tr>
                                 
                                 <th scope="row">1</th>
-                                
-                                <td>{{ c.title }}</td>
-                                <td> <a href="{% url 'EditResolution' c.id %}" > <button type="button" class="btn btn-secondary">Edit</button> </a> </td>
-                                <td>  <a href="{% url 'DeleteResolution' c.id %}" onclick="return confirm('Are you sure')" > <button type="button" class="btn btn-danger">Delete</button> </a></td>
+                                <td>{{ c.Title }}</td>
+                            
+                                <td> <a href="{% url 'EditCourse' c.id %}" > <button type="button" class="btn btn-secondary">Edit</button> </a> </td>
+                                <td>  <a href="{% url 'DeleteCourse' c.id %}" onclick="return confirm('Are you sure')" > <button type="button" class="btn btn-danger">Delete</button> </a></td>
                             </tr>
                             {% endfor %}
          

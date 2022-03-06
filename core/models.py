@@ -1,3 +1,4 @@
+from datetime import date
 from pyexpat import model
 from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
@@ -35,7 +36,17 @@ Education_CHOICES = (
 )
 
 
+class Project(models.Model):
+    Title = models.CharField(max_length=50, verbose_name="Project Title")
+    description = models.TextField(max_length=500, verbose_name= "Description" )
+    
+
+    def __str__(self):
+        return self.Title
+
 class Course(models.Model):
+    Project = models.ForeignKey(Project , related_name='project', on_delete=models.CASCADE, verbose_name="Project")
+
     Title = models.CharField(max_length=50, verbose_name="শীরনাম")
     description = models.TextField(max_length=500, verbose_name= "বর্ণনা" )
 
@@ -89,7 +100,9 @@ class Applicant(models.Model):
     nid_BC =  models.CharField(max_length=25, verbose_name="জন্মনিবন্ধন/জাতীয় পরিচয়পত্র নং")
     
     education =  models.CharField(choices = Education_CHOICES,max_length=50, verbose_name="শিক্ষাগত যোগ্যতা")
-    phone = models.CharField(max_length=11, verbose_name="মোবাইল")
+    phone = models.CharField(max_length=11, verbose_name="মোবাইল নম্বর")
+    Guardian_phone = models.CharField(max_length=11, verbose_name="অভিভাবক মোবাইল নম্বর")
+
     picture =  models.ImageField(upload_to='uploads/', verbose_name="ছবি")
     status =  models.CharField(choices = Status_CHOICES,max_length=50, verbose_name="সিদ্ধান্ত")
     created_at = models.DateTimeField(auto_now_add=True)
